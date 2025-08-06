@@ -3,8 +3,8 @@ export default function HomeAbout() {
         <div className="my-20">
             <div className="flex max-w-[90rem] mx-auto h-full justify-between items-center">
                 <div className="flex flex-col h-full justify-between gap-6">
-                    <h1 className="text-5xl">About GrandArch</h1>
-                    <p className="w-[40rem] text-2xl">
+                    <h1 className="text-3xl">About GrandArch</h1>
+                    <p className="w-[40rem] text-lg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quasi consectetur porro dolorum ullam repudiandae cumque aperiam, officia magnam nobis, nemo voluptas ipsam et ea vero ipsum? Fugit commodi quae enim quaerat ratione consequuntur nisi harum itaque, ex, doloremque non!
                     </p>
                     <a href="" className="">

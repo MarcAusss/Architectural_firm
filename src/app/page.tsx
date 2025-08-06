@@ -2,6 +2,7 @@
 
 import HomeAbout from "./components/homepage/about";
 import HomeLanding from "./components/homepage/landing";
+import ProjectLanding from "./components/homepage/project";
 import Navbar from "./components/navbar";
 
 export default function HomePage() {
@@ -12,8 +13,12 @@ export default function HomePage() {
         <HomeLanding />
       </div>
 
-      <div className="h-[80vh] relative">
+      <div className="relative">
         <HomeAbout/>
+      </div>
+
+      <div className="relative">
+        <ProjectLanding/>
       </div>
     </main>
   );
