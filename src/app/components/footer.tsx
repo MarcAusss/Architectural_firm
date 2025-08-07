@@ -1,8 +1,8 @@
 export default function Mainfooter() {
     return (
         <div>
-            Enter
-            
+            Enterasd
+
         </div>
     );
 }
