@@ -1,5 +1,6 @@
 "use client";
 
+import Mainfooter from "./components/footer";
 import HomeAbout from "./components/homepage/about";
 import HomeLanding from "./components/homepage/landing";
 import ProjectLanding from "./components/homepage/project";
@@ -27,8 +28,12 @@ export default function HomePage() {
         <HomeServices/>
       </div>
 
-      <div className="relative">
+      <div className="relative mb-40">
         <HomeTestimonials/>
+      </div>
+
+      <div className="footer ">
+        <Mainfooter/>
       </div>
     </main>
   );

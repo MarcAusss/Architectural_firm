@@ -108,10 +108,10 @@ export default function ProjectLanding() {
         {/*------------- Carousel: Navigation Controls -------------*/}
         <div className="flex justify-end w-full gap-20 mt-10 items-center">
           <div className="flex gap-10">
-            <button onClick={handlePrev} className="border rounded-full h-16 w-16 cursor-pointer p-4">
+            <button onClick={handlePrev} className="border h-16 w-16 cursor-pointer p-4">
               <img src="/img/Up arrow.png" alt="Previous" />
             </button>
-            <button onClick={handleNext} className="border rounded-full h-16 w-16 cursor-pointer p-4">
+            <button onClick={handleNext} className="border h-16 w-16 cursor-pointer p-4">
               <img src="/img/Up arrow-1.png" alt="Next" />
             </button>
           </div>
@@ -119,7 +119,7 @@ export default function ProjectLanding() {
             <h1 className="text-3xl">
               {String(currentSlide + 1).padStart(2, "0")}
             </h1>
-            <span className="text-xl">/{String(totalSlides).padStart(2, "0")}</span>
+            <span className="text-lg">/{String(totalSlides).padStart(2, "0")}</span>
           </div>
         </div>
       </div>
@@ -154,7 +154,6 @@ function ProjectCard({ project }: ProjectCardProps) {
         group-hover:w-[450px]
         hover:!w-[600px]
         w-[500px]
-        rounded-xl
       `}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => {

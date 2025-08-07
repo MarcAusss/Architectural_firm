@@ -45,7 +45,6 @@ body {
   background-position: center;
   z-index: 0;
   height: 100vh;
-  
 }
 
 .bg-landing::before {
@@ -97,4 +96,14 @@ body {
 .service-card:hover::before {
   width: 300%;
   height: 300%;
+}
+
+
+.bg-testimonials {
+  position: relative;
+  background-image: url('/img/interior.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  height: 60vh;
 }
