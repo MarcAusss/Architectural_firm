@@ -1,9 +1,9 @@
 export default function Mainfooter() {
     return (
-        <div>
+        <div className="">
 
 
-            
+
             Enterasd
 
         </div>
