@@ -107,3 +107,8 @@ body {
   z-index: 0;
   height: 60vh;
 }
+
+
+.bg-linear-goldWhite{
+  background-image: linear-gradient(to right, #FFF5DC 0%, #FFFCF4 35%, #FFFCF4 70%, #FFF5DC 100% );
+}
