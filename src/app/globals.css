@@ -41,10 +41,12 @@ body {
 .bg-landing {
   position: relative;
   background-image: url('/img/Group 8.png');
-  background-size: cover;
-  background-position: center;
   z-index: 0;
   height: 100vh;
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
+  image-rendering: crisp-edges;
 }
 
 .bg-landing::before {
@@ -129,3 +131,24 @@ body {
 .hover-underline:hover::after {
   transform: scaleX(1);
 }
+
+@keyframes slideLeft {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.slice {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.slice-0 { animation-name: slideLeft; }
+.slice-1 { animation-name: slideRight; }
+.slice-2 { animation-name: slideLeft; }
+.slice-3 { animation-name: slideRight; }
