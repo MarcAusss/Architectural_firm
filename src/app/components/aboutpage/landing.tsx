@@ -6,7 +6,7 @@ export default function AboutLanding() {
             </div>
 
             <div className="">
-                <div className="flex max-w-[90rem] mx-auto h-full justify-between items-center">
+                <div className="flex max-w-[90rem] mx-auto h-full justify-around items-center">
                     <div className="flex flex-col h-full justify-between gap-6">
                         <h1 className="text-3xl">About GrandArch</h1>
                         <p className="w-[40rem] text-lg">
