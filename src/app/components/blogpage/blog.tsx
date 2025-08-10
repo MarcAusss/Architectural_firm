@@ -52,7 +52,7 @@ function BlogCard({
 
   return (
     <div
-      className="relative w-[600px] h-[500px] overflow-hidden group"
+      className="relative w-[600px] h-[500px] group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -78,21 +78,28 @@ function BlogCard({
             )}
           </div>
         ))}
+
+        {/* Slide Indicator (Top Right) */}
+        {hovered && (
+          <div className="absolute top-3 right-3 bg-black/60 text-white text-sm px-3 py-1 rounded-full z-30">
+            {slide + 1} / {slides.length}
+          </div>
+        )}
       </div>
 
       {/* Overlay / Bottom Bar */}
       <div
-        className={`absolute bottom-0 left-[-5%] w-[110%] p-10 transition-all duration-500 ease-in-out z-20
+        className={`absolute bottom-[-10]  left-[-5%] w-[110%] p-10 transition-all duration-500 ease-in-out z-20
         ${
           slide === 1
             ? // Special animation for slide 2 (index 1)
-              `bg-[#FFFCF4] h-0 origin-bottom ${
-                hovered ? "h-full left-0 w-[670px]" : ""
-              }`
+              `bg-[#FFFCF4] h-0 origin-bottom w-full !left-0 !bottom-0 ${
+                hovered ? "h-full w-full !left-0 !bottom-0" : ""
+              } overflow-hidden`
             : // Normal hover effect for other slides
               `bg-[#FFFCF4] ${
                 hovered
-                  ? "group-hover:bg-[#0000005b] group-hover:text-white group-hover:w-full group-hover:left-0"
+                  ? "group-hover:bg-[#0000005b] group-hover:text-white w-full !left-0 !bottom-0"
                   : ""
               }`
         }
