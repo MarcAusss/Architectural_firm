@@ -152,3 +152,37 @@ body {
 .slice-1 { animation-name: slideRight; }
 .slice-2 { animation-name: slideLeft; }
 .slice-3 { animation-name: slideRight; }
+
+
+/*------------------- About -------------------*/
+
+.bg-about {
+  position: relative;
+  background-image: url('/img/Group 8 - Copy.png');
+  z-index: 0;
+  height: 50vh;
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
+  image-rendering: crisp-edges;
+}
+
+.bg-about::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.185); /* Adjust 0.4 for more/less darkness */
+  z-index: 1;
+  pointer-events: none; /* so it won't block interactions */
+}
+
+.bg-about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, #ffffff00 60%, #ffffff60, #ffffff)
+}
