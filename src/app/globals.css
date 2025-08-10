@@ -186,3 +186,7 @@ body {
   z-index: 2;
   background: linear-gradient(to bottom, #ffffff00 60%, #ffffff60, #ffffff)
 }
+
+.rounded-custom{
+  border-radius: 0 40px 40px 40px;
+}

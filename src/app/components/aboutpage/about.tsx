@@ -14,24 +14,24 @@ export default function AboutPageAbout() {
 
   const services = [
     {
-      title: 'Web Development',
-      description:
-        'We build responsive, modern websites with great performance and user experience.',
+        // id: 1,
+        title: 'Web Development',
+        description: 'We build responsive, modern websites with great performance and user experience.',
     },
     {
-      title: 'UI/UX Design',
-      description:
-        'Crafting visually appealing and intuitive designs tailored to your brand identity.',
+        // id: 1,
+        title: 'UI/UX Design',
+        description: 'Crafting visually appealing and intuitive designs tailored to your brand identity.',
     },
     {
-      title: 'Digital Strategy',
-      description:
-        'We help you grow your online presence and reach your audience effectively.',
+        // id: 1,
+        title: 'Digital Strategy',
+        description: 'We help you grow your online presence and reach your audience effectively.',
     },
     {
-      title: 'Digital Strategy',
-      description:
-        'We help you grow your online presence and reach your audience effectively.',
+        // id: 1,
+        title: 'Digital Strategy',
+        description: 'We help you grow your online presence and reach your audience effectively.',
     },
   ];
 
@@ -39,8 +39,9 @@ export default function AboutPageAbout() {
     <div className="mb-20 mt-64">
       <div className=" bg-[#F5F3EF] relative z-10 pb-10">
         <div className="relative top-[-7rem] max-w-[100rem] mx-auto flex justify-between gap-10 items-start">
-            {services.map((service) => (
+            {services.map((service, index) => (
             <div
+                key={index}
                 onMouseMove={handleMouseMove}
                 className="service-card group relative h-full w-full p-10 overflow-hidden transition-all duration-500 bg-[#FFFCF4]"
             >
