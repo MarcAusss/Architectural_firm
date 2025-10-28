@@ -66,35 +66,41 @@ export default function ProjectGridprojects() {
   ];
 
   return (
-    <div>
-      <div className="h-[40rem] w-full">
-        <h1 className="text-center text-3xl my-10">Lorem Ipsum</h1>
+    <section className="py-16 bg-white">
+      <h1 className="text-center text-4xl font-semibold mb-10">Lorem Ipsum</h1>
 
-        <div className="flex h-full w-full items-center justify-center">
-          <div className="grid h-full w-full gap-4 p-2 grid-cols-10 grid-rows-10">
-            {gridItems.map(({ id, colSpan, rowSpan, imgSrc, title, description, link }) => (
-              <div
-                key={id}
-                className={`col-span-${colSpan} row-span-${rowSpan} bg-gray-200 relative overflow-hidden group flex items-center justify-center`}
+      <div className="flex justify-center">
+        <div className="grid h-[auto] w-[90%] gap-3 grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10">
+          {gridItems.map(({ id, colSpan, rowSpan, imgSrc, title, description, link }) => (
+            <div
+              key={id}
+              style={{
+                gridColumn: `span ${colSpan} / span ${colSpan}`,
+                gridRow: `span ${rowSpan} / span ${rowSpan}`,
+              }}
+              className="relative overflow-hidden group rounded-xl shadow-lg"
+            >
+              <img
+                src={imgSrc}
+                alt={title}
+                className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+              />
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/70 text-white flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h2 className="text-2xl font-bold mb-2">{title}</h2>
+                <p className="text-center mb-4 text-sm">{description}</p>
+                <a
+                  href={link}
+                  className="underline italic text-sm hover:text-gray-300 transition-colors"
                 >
-                <img
-                    src={imgSrc}
-                    alt={title}
-                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                />
-                <div className="hovered absolute w-full h-full top-0 left-0 bg-[#00000080] bg-opacity-70 text-white flex flex-col items-center justify-between p-10 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
-                    <h1 className="text-2xl">{title}</h1>
-                    <h2 className="text-xl">{description}</h2>
-                    <a href={link} className="underline italic">
-                    Click here to learn more
-                    </a>
-                </div>
-                </div>
-
-            ))}
-          </div>
+                  Click here to learn more
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

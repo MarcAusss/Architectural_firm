@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -8,7 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [animationDone, setAnimationDone] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const main_container = useRef<HTMLDivElement>(null);
+  const gradient = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -29,47 +31,57 @@ export default function HomeLanding() {
       );
     }
 
-    // Auto-hide slices after animation
-    const timer = setTimeout(() => {
-      setAnimationDone(true);
-    }, 1500); // match your slice animation duration
+    if (videoRef.current) {
+      gsap.fromTo(
+        videoRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 2, ease: 'power2.out', delay: 0.3 }
+      );
+    }
 
-    return () => clearTimeout(timer);
+    if (main_container.current && videoRef.current && gradient.current) {
+      gsap.fromTo(
+        [videoRef.current, gradient.current],
+        {
+          scale: 1,
+          borderRadius: '0px',
+          margin: '0px',
+        },
+        {
+          scale: 0.90,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: main_container.current,
+            start: 'top top',
+            end: '+=100',
+            scrub: true,
+          },
+        }
+      );
+    }
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Background */}
-      {!animationDone ? (
-        // Sliced background during animation
-        <div className="absolute inset-0 z-0">
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className={`absolute w-full h-1/4 bg-no-repeat bg-cover slice slice-${i}`}
-              style={{
-                top: `${i * 25}%`,
-                backgroundImage: "url('/img/Group 8.png')",
-                backgroundSize: `100% ${4 * 100}%`,
-                backgroundPosition: `center ${i * 33.3333}%`,
-              }}
-            />
-          ))}
-        </div>
-      ) : (
-        // Full image after animation
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/img/Group 8.png')",
-          }}
-        />
-      )}
+    <div
+      ref={main_container}
+      className="relative min-h-screen overflow-hidden flex items-center justify-center"
+    >
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/video/Architectural animation for the residence in New Zealand ｜ 3D Visualization for Lamont&Co and JASMAX.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/70" />
+      {/* Overlay Gradient */}
+      <div ref={gradient} className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/70 rounded-[15px]" />
 
-      {/* Text content */}
+      {/* Text Content */}
       <div ref={containerRef} className="absolute left-40 bottom-56 z-20">
         <h1 className="text-white text-xl mb-5">
           Welcome to GrandArchh Design Studio
