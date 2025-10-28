@@ -161,7 +161,6 @@ function ProjectCard({ project }: ProjectCardProps) {
         setSlideIndex(0);
       }}
     >
-      {/* Default image when not hovered */}
       <img
         src={project.image}
         alt={project.title}
@@ -170,7 +169,6 @@ function ProjectCard({ project }: ProjectCardProps) {
         }`}
       />
 
-      {/* Hover slideshow images */}
       <div className="w-full h-full relative">
         {project.images.map((img: string, idx: number) => (
           <img
@@ -184,15 +182,12 @@ function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-[#0000003b] group-hover/item:bg-opacity-70 transition-all duration-500" />
 
-      {/* Project title */}
       <h1 className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-3xl group-hover/item:opacity-0 transition-opacity duration-300">
         {project.title}
       </h1>
 
-      {/* Project description on hover */}
       <div className="absolute inset-0 flex justify-center items-end opacity-0 hover:opacity-100 transition-opacity duration-500 px-6 pb-10 text-white">
         <div>
           <h1 className="text-center text-3xl mb-2">{project.title}</h1>

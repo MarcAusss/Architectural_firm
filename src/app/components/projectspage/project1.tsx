@@ -125,7 +125,6 @@ export default function ProjectsProject1() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="flex justify-between items-center w-full gap-10 mt-10">
         <div className="w-full ml-36" ref={leftContent}>
           <h2 className="text-2xl">
@@ -153,7 +152,6 @@ export default function ProjectsProject1() {
         </div>
       </div>
 
-      {/* Bottom Stats */}
       <div className="flex gap-7 justify-evenly mx-20 mt-5" ref={statsRef}>
         {Array(4)
           .fill(0)

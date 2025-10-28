@@ -67,7 +67,6 @@ export default function HomeLanding() {
       ref={main_container}
       className="relative min-h-screen overflow-hidden flex items-center justify-center"
     >
-      {/* Background Video */}
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -78,10 +77,8 @@ export default function HomeLanding() {
         playsInline
       />
 
-      {/* Overlay Gradient */}
       <div ref={gradient} className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/70 rounded-[15px]" />
 
-      {/* Text Content */}
       <div ref={containerRef} className="absolute left-40 bottom-56 z-20">
         <h1 className="text-white text-xl mb-5">
           Welcome to GrandArchh Design Studio

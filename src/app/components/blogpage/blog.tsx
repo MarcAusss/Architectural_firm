@@ -87,7 +87,6 @@ function BlogCard({
         )}
       </div>
 
-      {/* Overlay / Bottom Bar */}
       <div
         className={`absolute bottom-[-10]  left-[-5%] w-[110%] p-10 transition-all duration-500 ease-in-out z-20
         ${
@@ -117,14 +116,12 @@ function BlogCard({
 export default function BlogPage() {
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Header */}
       <div className="bg-about h-[50vh] flex items-center justify-center pb-5">
         <h1 className="text-white text-6xl relative z-20">
           GrandArch Architectural Design Studio
         </h1>
       </div>
 
-      {/* Blog Section */}
       <div className="my-10 max-w-7xl mx-auto">
         <div className="pb-10">
           <div className="gap-4 flex items-center">

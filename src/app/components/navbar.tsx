@@ -41,14 +41,12 @@ export default function Navbar() {
           : 'bg-[#F3ECDD] text-black shadow-md'
       )}
     >
-      {/* Logo */}
       <img
         src="/img/305050137_590605822773619_5303982577630322558_n-removebg-preview 1.png"
         alt="Logo"
         className="w-20"
       />
 
-      {/* Nav Links */}
       <div className="flex gap-10">
         {links.map(({ href, label }) => {
           const isActive = pathname === href;

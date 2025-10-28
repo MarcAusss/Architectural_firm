@@ -86,7 +86,6 @@ export default function ProjectGridprojects() {
                 className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
               />
 
-              {/* Hover Overlay */}
               <div className="absolute inset-0 bg-black/70 text-white flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>
                 <p className="text-center mb-4 text-sm">{description}</p>
